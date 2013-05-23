@@ -1,0 +1,46 @@
+
+**************** OSX Terminal Commands ****************
+*						      
+* Running list of terminal commands I find useful 
+* 						      
+*******************************************************
+
+
+
+// add spacers to the dock to separate applications
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+killall Dock
+
+
+// resize all images in directory -- replace .jpg with any other image extension -- replace 640 with desired file size
+sips -Z 640 *.jpg 
+
+
+// find and replace all occurrences in all files (with same file extension) within a directory
+// change .php extension to replace in other file types
+perl -pi -w -e 's/CHANGE_FROM/CHANGE_TO/g;' *.php
+
+
+// change default save location to disk instead of iCloud
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+
+// expand save dialog by default
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool TRUE
+
+
+// disable mission control
+defaults write com.apple.dock mcx-expose-disabled -bool TRUE
+killall Dock
+
+
+// show library folder by default
+chflags nohidden ~/Library/
+
+
+// disable warning for changing file extensions
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+
+// enable path view in finder
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
