@@ -44,3 +44,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 // enable path view in finder
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
+
+// remove trash from time machine backups (from within your backup volume)
+sudo rm -rf .Trashes
